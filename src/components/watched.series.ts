@@ -24,12 +24,7 @@ export class WatchedSeries extends Component {
             <!--<p class="info">You already have not watched any serie</p>-->
             <ul class="series-list series-list--watched">`;
     this.watchedSeries.forEach((item: Serie) => {
-      template += new ItemSerie(
-        '',
-        item,
-        this.handleErase.bind(this),
-        this.handleChange.bind(this)
-      ).template;
+      template += new ItemSerie('', item).template;
     });
     template += `
                 
