@@ -28,12 +28,7 @@ export class UnwatchedSeries extends Component {
             <ul class="series-list">`;
 
     this.unwatchedSeries.forEach((item: Serie) => {
-      template += new ItemSerie(
-        '',
-        item,
-        this.handleErase.bind(this),
-        this.handleChange.bind(this)
-      ).template;
+      template += new ItemSerie('', item).template;
     });
     template += `
                 

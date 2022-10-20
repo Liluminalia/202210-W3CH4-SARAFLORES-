@@ -20,7 +20,7 @@ export class UnwatchedSeries extends Component {
             <!--<p class="info">Congrats! You've watched all your series</p>-->
             <ul class="series-list">`;
         this.unwatchedSeries.forEach((item) => {
-            template += new ItemSerie('', item, this.handleErase.bind(this), this.handleChange.bind(this)).template;
+            template += new ItemSerie('', item).template;
         });
         template += `
                 
