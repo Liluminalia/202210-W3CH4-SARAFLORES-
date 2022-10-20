@@ -8,11 +8,11 @@ export class Main extends Component {
     }
     createTemplate() {
         return `
-    <div class="container">
+    
         <main class="main">
         
         </main>
-        </div>
+      
         `;
     }
 }
