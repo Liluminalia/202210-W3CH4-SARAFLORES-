@@ -1,5 +1,4 @@
-"use strict";
-const series = [
+export const series = [
     {
         id: 1,
         name: 'The Sopranos',
