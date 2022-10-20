@@ -37,13 +37,4 @@ export const SERIES: Array<Serie> = [
     5,
     53
   ),
-  new Serie(
-    5,
-    'Atypical',
-    'Robia Rashid',
-    2017,
-    'https://www.cine.com/media/series/2711.jpg',
-    0,
-    0
-  ),
 ];
