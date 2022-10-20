@@ -22,11 +22,11 @@ export class ItemSerie extends Component {
       ).addEventListener('click', () => {
         this.handleErase(this.item.id);
       });
-      //(
-      //   document.querySelector(`#c${this.item.id}`) as HTMLElement
-      // ).addEventListener('change', () => {
-      //   this.handleChange(this.item.id);
-      //});
+      (
+        document.querySelector(`#c${this.item.id}`) as HTMLElement
+      ).addEventListener('change', () => {
+        this.handleChange(this.item.id);
+      });
     }, 100);
   }
 
@@ -41,19 +41,19 @@ export class ItemSerie extends Component {
                 <h4 class="serie__title">${this.item.name}</h4>
                 <p class="serie__info">${this.item.creator} (${this.item.year})</p>
                 <ul class="score">
-                  <li class="score__star">
+                  <li class="score__star" id="c${this.item.id}">
                     <i class="icon--score fas fa-star" title="1/5"></i>
                   </li>
-                  <li class="score__star">
+                  <li class="score__star" id="c${this.item.id}">
                     <i class="icon--score fas fa-star" title="2/5"></i>
                   </li>
-                  <li class="score__star">
+                  <li class="score__star" id="c${this.item.id}">
                     <i class="icon--score fas fa-star" title="3/5"></i>
                   </li>
-                  <li class="score__star">
+                  <li class="score__star" id="c${this.item.id}">
                     <i class="icon--score fas fa-star" title="4/5"></i>
                   </li>
-                  <li class="score__star">
+                  <li class="score__star" id="c${this.item.id}">
                     <i class="icon--score fas fa-star" title="5/5"></i>
                   </li>
                 </ul>

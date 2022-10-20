@@ -6,9 +6,13 @@ import { ItemSerie } from './item.serie.js';
 export class UnwatchedSeries extends Component {
   template!: string;
   unwatchedSeries: Array<Serie>;
+  watched!: boolean;
   constructor(public selector: string) {
     super();
-    this.unwatchedSeries = [...SERIES];
+    this.unwatchedSeries = [...SERIES].filter(
+      (Serie) => Serie.watched === false
+    );
+
     this.manageComponent();
   }
   manageComponent() {
@@ -19,9 +23,10 @@ export class UnwatchedSeries extends Component {
     let template = `
         <section class="series-pending">
             <h3 class="subsection-title">Pending series</h3>
-            <p class="info">You have 4 series pending to watch</p>
+            <p class="info">You have ${this.unwatchedSeries.length}  series pending to watch</p>
             <!--<p class="info">Congrats! You've watched all your series</p>-->
             <ul class="series-list">`;
+
     this.unwatchedSeries.forEach((item: Serie) => {
       template += new ItemSerie(
         '',
@@ -31,9 +36,7 @@ export class UnwatchedSeries extends Component {
       ).template;
     });
     template += `
-                </ul>
-                <i class="fas fa-times-circle icon--delete"></i>
-              </li>
+                
             </ul>
           </section>
         `;
@@ -46,9 +49,8 @@ export class UnwatchedSeries extends Component {
     this.manageComponent();
   }
 
-  handleChange(changeId: number) {
-    const i = this.unwatchedSeries.findIndex((item) => item.id === changeId);
+  handleChange(changeID: number) {
+    const i = this.unwatchedSeries.findIndex((item) => item.id === changeID);
     this.unwatchedSeries[i].watched = !this.unwatchedSeries[i].watched;
-    this.manageComponent();
   }
 }
